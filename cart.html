@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - FATTIE</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #fff8f2;
+        margin: 0;
+      }
+      header {
+        background: #ff6b35;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .container {
+        width: 80%;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      }
+      h2 {
+        color: #ff6b35;
+      }
+      #cartItems p {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      button {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        background: #ff6b35;
+        color: white;
+        cursor: pointer;
+        margin: 8px;
+      }
+      button:hover {
+        background: #e85b28;
+      }
+     /* SPIN WHEEL */
+
+.wheel-box {
+    width:260px;
+    height:260px;
+    margin:20px auto;
+    position:relative;
+}
+
+#wheel {
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:conic-gradient(
+        #ff595e 0deg 60deg,
+        #ffca3a 60deg 120deg,
+        #8ac926 120deg 180deg,
+        #1982c4 180deg 240deg,
+        #6a4c93 240deg 300deg,
+        #ff924c 300deg 360deg
+    );
+    transition:transform 5s cubic-bezier(.17,.67,.12,.99);
+}
+
+.arrow {
+    position:absolute;
+    top:-25px;
+    left:115px;
+    font-size:35px;
+}
+
+
+/* SCRATCH CARD */
+
+.scratch-container {
+    position:relative;
+    width:300px;
+    height:150px;
+    margin:20px auto;
+}
+
+#scratchCanvas {
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.prize {
+    width:300px;
+    height:150px;
+    background:white;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:25px;
+    color:#ff6b35;
+}
+    </style>
+  </head>
+  <body onload="loadCart()">
+    <header><h1>🛒 Your Cart</h1></header>
+    <div class="container">
+      <h2>Items</h2>
+      <div id="cartItems"></div>
+      <h2 id="total">Total: ₹0</h2>
+     <button onclick="clearCart()">Clear Cart</button>
+
+<button onclick="chooseDiscountGame()">🎁 Unlock Discount</button>
+
+<div id="gameChoice" style="display:none; text-align:center;">
+    <h2>Choose Your Discount Game!</h2>
+
+    <button onclick="spinWheel()">🎡 Spin the Wheel</button>
+    <button onclick="scratchCard()">🎫 Scratch Card</button>
+    <button onclick="quizGame()">🧠 Take Quiz</button>
+
+    <div id="gameArea"></div>
+</div>
+<button onclick="checkout()">Checkout</button>
+
+<a href="page1.html">
+    <button>Continue Shopping</button>
+</a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
